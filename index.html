@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>TodoList</title>
+</head>
+
+<body>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <form id="InputData">
+                <p class="title-create">Введіть дані нотатки</p>
+                <p>Назва</p>
+                <input name="name" type="text">
+                <p>Дату</p>
+                <input name="date" type="date" min="" max="">
+                <p>Опис</p>
+                <input name="context" type="text">
+                <select name="category">
+                    <option value="Task">Task</option>
+                    <option value="Random Thought">Random Thought</option>
+                    <option value="Idea">Idea</option>
+
+                </select>
+                <input type="submit" value="Sent">
+            </form>
+
+            <span id="close">&times;</span>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <div id="Change_modal" class="modal">
+        <div class="modal-content">
+            <form id="Change_date">
+                <p class="title-create">Введіть нову дату</p>
+                <input name="date" type="date" min="" max="">
+                <input type="submit" value="Sent">
+            </form>
+
+            <span id="close">&times;</span>
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <div class="todo-wrapper">
+        <div class="todo-list-wrapper">
+            <div class="todo-header">
+                <ul class="header-line header-Tags">
+                    <li>Name</li>
+                    <li>Created</li>
+                    <li>Category</li>
+                    <li>Content</li>
+                    <li>Dates</li>
+                </ul>
+                <ul class="header-line-buttons">
+                    <li><button id="button-archive"><img class="Delete_button" src="archive.png"></button> </li>
+                    <li><button id="delete-button">
+                            <img class="Delete_button" src="garbage.png"></img></li>
+                </ul>
+
+            </div>
+            <div class="todo-list">
+
+
+
+            </div>
+        </div>
+
+        <button id="todo-button-create">Створити Нотатку</button>
+        <div class="todo-list-wrapper">
+            <div id="show-archive">Show</div>
+            <div class="todo-wrapper-info todo-wrapper-info-unactive">
+
+            </div>
+            <div class="todo-info-notes">
+                <div class="header-line-info">
+
+                    <ul class="header-line header-line-info-lst">
+
+                        <li>Category</li>
+
+                    </ul>
+                    <ul class="Status-notes">
+                        <li>Active</li>
+                        <li>Archived</li>
+                        
+                    </ul>
+                </div>
+                <div class="header-line-info header-line-info-item">
+
+                    <ul class="header-line header-line-info-lst">
+
+                        <li>Random Thoughts</li>
+
+                    </ul>
+                    <ul class="Status-notes  Status-notes-items">
+                        <li id="Random-active"></li>
+                        <li id="Random-archive"></li>
+                    </ul>
+                </div>
+                <div class="header-line-info header-line-info-item">
+
+                    <ul class="header-line header-line-info-lst">
+
+                        <li>Idea</li>
+
+                    </ul>
+                    <ul class="Status-notes  Status-notes-items">
+                        <li id="Idea-active"></li>
+                        <li id="Idea-archive"></li>
+                    </ul>
+                </div>
+                <div class="header-line-info header-line-info-item">
+
+                    <ul class="header-line header-line-info-lst">
+
+                        <li>Task</li>
+
+                    </ul>
+                    <ul class="Status-notes Status-notes-items">
+                        <li id="Task-active"></li>
+                        <li id="Task-archive"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+*{
+    
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none; 
+}
+.todo-wrapper{
+    margin:100px 80px 80px 80px;
+}
+.todo-header{
+    padding:10px 8px ;
+    background-color: rgb(148, 144, 144);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+.header-line{
+    display: flex;
+    margin-left: 40px;
+    justify-content: space-around;
+    min-width: 1100px;
+}
+.item-line{margin-left: 0;
+    padding-left: 0px;
+}
+
+.todo-wrapper-info-unactive{
+    display: none;
+}
+button{
+    outline: 0;
+}
+
+.header-line-buttons{
+    display: flex;
+    
+    
+}
+.header-line-buttons button{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.header-line li{
+    width:180px ;
+list-style: none; 
+overflow: hidden;
+padding: 10px;    
+}
+
+.todo-item{
+    padding:10px ;
+    padding-left: 20px;
+    margin-top: 10px;
+    background-color: rgb(226, 217, 217);
+    display: flex;
+    justify-content: space-between;
+    color: rgb(94, 94, 94);
+    font-size: 20px;
+    font-weight: 400;
+}
+.item-name{
+    color: black;
+    
+}
+  
+  .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      padding-top: 100px; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      background-color: rgba(0,0,0,0.5); 
+  }
+  
+  .title-create{
+      font-size: 30px;
+      font-weight: 500;
+      text-align: center;
+  }
+  .modal-content {
+      position: relative;
+      color: black;
+      background-color: white;
+      margin: auto;
+      padding: 40px 100px;
+      border: 2px solid white;
+      width: 50%;
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+     
+  }
+  #close{
+      font-size: 40px;
+      cursor: pointer;
+      position: absolute;
+      
+      right: 0px;
+      top:-12px;  
+    
+    }
+    .header-Tags li:last-child{
+       text-align: center;
+    }
+  
+
+  
+  .close {
+      
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      
+  }
+  #button-archive{
+    outline: none;
+    border: none;
+    background-color: inherit;  
+  }
+  .header-line-itemRandom::before{
+      margin-left: 3px;
+      margin-top: 10px;
+    content: url('thoughts.png');
+  }
+  .header-line-itemTask::before{
+    margin-left: 3px;
+    margin-top: 10px;
+  content: url('task.png');
+  }
+  .header-line-itemIdea::before{
+    margin-left: 3px;
+    margin-top: 10px;
+  content: url('idea.png');
+}
+  #delete-button{
+     
+      outline: none;
+      border: none;
+      background-color: inherit;
+  }
+  .Delete_button{
+      margin-top: 5px;
+    width: 30px;
+    height: 30px;
+}
+.change-button{
+    margin-top: 2px;
+    width: 37px;
+    height: 37px;
+}
+.Delete-but{
+    background-color: inherit;
+    outline: none;
+      border: none;
+
+}
+  #show-archive{
+      cursor: pointer;
+      width: 100%;
+      background-color: rgb(165, 161, 161);
+      color: white;
+      font-size: 25px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px 10px;
+    
+  }
+  
+  .Non-Change{
+      visibility: hidden;
+  }
+  
+  
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+.header-line-info{
+    background-color: rgb(165, 161, 161);
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+  
+    
+}
+
+.Status-notes{
+    display: flex;
+}
+.Status-notes li:last-child{
+    margin-right: 250px;
+}
+.Status-notes li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 300px;
+    
+    
+}
+.Status-notes-items li{
+    padding-right: 35px;
+    width: 50px;
+}
+.Status-notes-items li:last-child{
+    padding-right: 29px;
+}
+.header-line-info-lst{
+    min-width: 400px;
+    
+}
+.header-line-info-item{
+    background-color: rgb(226, 217, 217);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(94, 94, 94);
+
+
+    
+}
