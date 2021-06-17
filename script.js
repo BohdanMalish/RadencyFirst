@@ -85,9 +85,11 @@ const Item = (item,index,archive) => {
     
     let img;
     let classChange='';
+    let archiv;
     if(archive){
         img='Unarchive.png';
         classChange='Non-Change';
+        
     }
     else{
         img='archiveblack.png';
@@ -115,7 +117,7 @@ const Item = (item,index,archive) => {
                             <ul class="header-line-buttons">
                             <li><button class="Delete-but ${classChange}" onclick={Change(${index})}><img class="Delete_button change-button" src="pen.png"></button></li>
                             <li><button class="Delete-but" onclick={Archive(${index},${archive})}><img class="Delete_button" src=${img}></button> </li>
-                            <li><button class="Delete-but" onclick={Delete(${false},${index})}><img class="Delete_button" src="garbageBlack.png"></img></button></li>
+                            <li><button class="Delete-but" onclick={Delete(${archiv},${index})}><img class="Delete_button" src="garbageBlack.png"></img></button></li>
                         </ul>
         
                     
@@ -156,6 +158,10 @@ const Archive = (index,archive) => {
 
 let SentForm = document.querySelector('#InputData');
 let CloseForm = document.querySelector('#close');
+let closeFormChange=document.querySelector('#closeChangeMenu');
+closeFormChange.addEventListener('click',function(){
+    ChangeModal.style.display="none";
+})
 CloseForm.addEventListener('click', function () {
     modal.style.display = "none";
 });
@@ -206,6 +212,11 @@ Create.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    }
+}
+window.onclick = function (event) {
+    if (event.target == ChangeModal) {
+        ChangeModal.style.display = "none";
     }
 }
 

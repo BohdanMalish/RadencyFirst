@@ -31,6 +31,17 @@
 .todo-wrapper-info-unactive{
     display: none;
 }
+#todo-button-create{
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.button-create-wraper{
+    margin-top: 30px;
+    text-align: end;
+    margin-right: 30px;
+
+}
 button{
     outline: 0;
 }
@@ -83,6 +94,7 @@ padding: 10px;
       font-size: 30px;
       font-weight: 500;
       text-align: center;
+      margin-bottom: 30px;
   }
   .modal-content {
       position: relative;
@@ -96,13 +108,13 @@ padding: 10px;
       -webkit-animation-duration: 0.4s;
      
   }
-  #close{
-      font-size: 40px;
+  .close{
+      font-size: 45px;
       cursor: pointer;
       position: absolute;
       
-      right: 0px;
-      top:-12px;  
+      right: 4px;
+      top:-10px;  
     
     }
     .header-Tags li:last-child{
@@ -111,14 +123,7 @@ padding: 10px;
   
 
   
-  .close {
-      
-      color: white;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      
-  }
+
   #button-archive{
     outline: none;
     border: none;
@@ -135,6 +140,7 @@ padding: 10px;
   content: url('task.png');
   }
   .header-line-itemIdea::before{
+      
     margin-left: 3px;
     margin-top: 10px;
   content: url('idea.png');
@@ -229,4 +235,36 @@ padding: 10px;
 
 
     
+}
+.form-cont{
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin-top: 10px;
+    
+}
+.form-cont input{
+    width: 150px;
+    outline: none;
+}
+.form-cont p{
+    font-size: 15px;
+    font-weight: 400;
+    margin-right: 10px;
+}
+#form-submit-button{
+    position: absolute;
+    outline: none;
+
+    width: 70px;
+    cursor: pointer;
+    height: 30px;
+    right: 10px;
+}
+.header-line-info-item img{
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
 }

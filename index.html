@@ -16,22 +16,28 @@
         <div class="modal-content">
             <form id="InputData">
                 <p class="title-create">Введіть дані нотатки</p>
+                <div class="form-cont">
                 <p>Назва</p>
-                <input name="name" type="text">
+                <input name="name" type="text"></div>
+                <div class="form-cont">
                 <p>Дату</p>
-                <input name="date" type="date" min="" max="">
+                <input name="date" type="date" min="" max=""></div>
+                <div class="form-cont">
                 <p>Опис</p>
-                <input name="context" type="text">
+               
+                <input name="context" type="text"></div>
+                <div class="form-cont">
                 <select name="category">
                     <option value="Task">Task</option>
                     <option value="Random Thought">Random Thought</option>
                     <option value="Idea">Idea</option>
 
                 </select>
-                <input type="submit" value="Sent">
+            </div>
+                <input id="form-submit-button" type="submit" value="Sent">
             </form>
 
-            <span id="close">&times;</span>
+            <span id="close" class="close">&times;</span>
         </div>
 
 
@@ -50,7 +56,7 @@
                 <input type="submit" value="Sent">
             </form>
 
-            <span id="close">&times;</span>
+            <span id="closeChangeMenu" class="close">&times;</span>
         </div>
 
 
@@ -83,8 +89,8 @@
 
             </div>
         </div>
-
-        <button id="todo-button-create">Створити Нотатку</button>
+        <div class="button-create-wraper">
+        <button id="todo-button-create">Створити Нотатку</button></div>
         <div class="todo-list-wrapper">
             <div id="show-archive">Show</div>
             <div class="todo-wrapper-info todo-wrapper-info-unactive">
@@ -105,7 +111,7 @@
                     </ul>
                 </div>
                 <div class="header-line-info header-line-info-item">
-
+                    <img src="thoughts.png" alt="">
                     <ul class="header-line header-line-info-lst">
 
                         <li>Random Thoughts</li>
@@ -117,6 +123,7 @@
                     </ul>
                 </div>
                 <div class="header-line-info header-line-info-item">
+                    <img src="idea.png" alt="">
 
                     <ul class="header-line header-line-info-lst">
 
@@ -129,6 +136,7 @@
                     </ul>
                 </div>
                 <div class="header-line-info header-line-info-item">
+                    <img src="task.png" alt="">
 
                     <ul class="header-line header-line-info-lst">
 
