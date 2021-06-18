@@ -31,13 +31,19 @@ const RenderItem = (td, lst, archive) => {
     
 
 }
-
+let showUp=document.querySelector('#show-archive-image-up');
+let showDown=document.querySelector('#show-archive-image-down');
 ShowArchive.addEventListener('click', function () {
     if (archive_list.classList[1] == 'todo-wrapper-info-unactive') {
         archive_list.classList.remove('todo-wrapper-info-unactive');
+        showDown.style.display='none';
+        showUp.style.display='block';
+        
     }
     else {
         archive_list.classList.add('todo-wrapper-info-unactive');
+        showUp.style.display='none';
+        showDown.style.display='block';
 
     }
 
@@ -284,6 +290,7 @@ randArc.innerHTML=tempRand;
 }
 
 RenderStats(List,ArchiveList);
+
 
 
 
