@@ -132,18 +132,18 @@ padding: 10px;
   .header-line-itemRandom::before{
       margin-left: 3px;
       margin-top: 10px;
-    content: url('thoughts.png');
+    content: url('./images/thoughts.png');
   }
   .header-line-itemTask::before{
     margin-left: 3px;
     margin-top: 10px;
-  content: url('task.png');
+  content: url('./images/task.png');
   }
   .header-line-itemIdea::before{
       
     margin-left: 3px;
     margin-top: 10px;
-  content: url('idea.png');
+  content: url('./images/idea.png');
 }
   #delete-button{
      
