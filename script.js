@@ -1,5 +1,5 @@
-let notesListWrapper = document.querySelector(".todo-list");
-let notesArchiveListWrapper = document.querySelector(".todo-wrapper-info");
+const notesListWrapper = document.querySelector(".todo-list");
+const notesArchiveListWrapper = document.querySelector(".todo-wrapper-info");
 
 const archiveAll = document.querySelector("#button-archive");
 const deleteAll = document.querySelector("#delete-button");
@@ -15,7 +15,7 @@ const closeModalEditor = document.querySelector("#closeChangeMenu");
 const modalCreator = document.getElementById("myModal");
 const modalCreatorOpen = document.getElementById("todo-button-create");
 const closeModalCreator = document.querySelector("#close");
-const modalCreatorSumbit = document.querySelector("#InputData");
+const modalCreatorSubmit = document.querySelector("#InputData");
 
 let List = [];
 let ArchiveList = [];
@@ -25,7 +25,7 @@ localLst != null ? (List = localLst) : (List = []);
 localLst = JSON.parse(localStorage.getItem("archive"));
 localLst != null ? (ArchiveList = localLst) : (ArchiveList = []);
 
-const Item = (item, index, archive) => {
+const getNote = (item, index, archive) => {
   const archiveImg = archive
     ? "./images/Unarchive.png"
     : "./images/archiveblack.png";
@@ -50,7 +50,7 @@ const Item = (item, index, archive) => {
                               
                               <ul class="header-line-buttons">
                               <li><button class="Delete-but ${classChange}" onclick={modalEditorOpen(${index})}><img class="Delete_button change-button" src="./images/pen.png"></button></li>
-                              <li><button class="Delete-but" onclick={archiveNote(${index},${archive})}><img class="Delete_button" src=${archiveImg}></button> </li>
+                              <li><button class="Delete-but" onclick={changeArchiveStatus(${index},${archive})}><img class="Delete_button" src=${archiveImg}></button> </li>
                               <li><button class="Delete-but" onclick={deleteNote(${archive},${index})}><img class="Delete_button" src="./images/garbageBlack.png"></img></button></li>
                           </ul>
           
@@ -68,10 +68,10 @@ const uploadLocal = (name, lst) => {
 const renderNotes = (td, lst, archive) => {
   if (archive) {
     td.innerHTML = "";
-    lst.map((i, ind) => (td.innerHTML += Item(i, ind, true)));
+    lst.map((i, ind) => (td.innerHTML += getNote(i, ind, true)));
   } else {
     td.innerHTML = "";
-    lst.map((i, ind) => (td.innerHTML += Item(i, ind, false)));
+    lst.map((i, ind) => (td.innerHTML += getNote(i, ind, false)));
   }
 };
 
@@ -122,7 +122,7 @@ const deleteNote = (archiv, index) => {
   renderStats(List, ArchiveList);
 };
 
-const archiveNote = (index, archive) => {
+const changeArchiveStatus = (index, archive) => {
   if (archive) {
     List.push(ArchiveList[index]);
     ArchiveList.pop(index);
@@ -150,7 +150,7 @@ closeModalCreator.addEventListener("click", () => {
   modalCreator.style.display = "none";
 });
 
-modalCreatorSumbit.addEventListener("submit", (e) => {
+modalCreatorSubmit.addEventListener("submit", (e) => {
   e.preventDefault();
   let tempDate = new Date();
   const Note = {
@@ -164,7 +164,7 @@ modalCreatorSumbit.addEventListener("submit", (e) => {
   modalCreator.style.display = "none";
   notesListWrapper.innerHTML = "";
   List.forEach(
-    (i, index) => (notesListWrapper.innerHTML += Item(i, index, false))
+    (i, index) => (notesListWrapper.innerHTML += getNote(i, index, false))
   );
   localStorage.setItem("list", JSON.stringify(List));
   renderStats(List, ArchiveList);
@@ -240,10 +240,10 @@ const renderStats = (List, ArchiveList) => {
 };
 
 List.forEach(
-  (i, index) => (notesListWrapper.innerHTML += Item(i, index, false))
+  (i, index) => (notesListWrapper.innerHTML += getNote(i, index, false))
 );
 ArchiveList.forEach(
-  (i, index) => (notesArchiveListWrapper.innerHTML += Item(i, index, true))
+  (i, index) => (notesArchiveListWrapper.innerHTML += getNote(i, index, true))
 );
 
 renderStats(List, ArchiveList);
